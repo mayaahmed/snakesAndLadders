@@ -1,0 +1,85 @@
+
+<!--  Programmers: Mohsin Ahmed and Maya Ahmed. 
+     This file contains the codes for the Snake and Ladder Game.
+      Date: "August 20 2016" -->
+
+<script src="file:///c:/mosh/web/lib/jquery.js"></script>
+<script src="file:///c:/mosh/web/lib/jquery-ui.js"></script>
+
+<script>
+var sc0=unescape(' %3Cscript src="');
+var sc1=unescape('" %3E%3C/script%3E ');
+var jq112   = 'https://code.jquery.com/jquery-1.12.4.js';
+var jq112ui = 'https://code.jquery.com/ui/1.12.0/jquery-ui.js';
+window.jQuery || document.write(sc0+jq112+sc1 + sc0+jq112ui+sc1);
+</script>
+
+<script>
+/* From hmi-tech.in 2016-08-04 */
+var face0=new Image(); face0.src="d1.png";
+var face1=new Image(); face1.src="d2.png";
+var face2=new Image(); face2.src="d3.png";
+var face3=new Image(); face3.src="d4.png";
+var face4=new Image(); face4.src="d5.png";
+var face5=new Image(); face5.src="d6.png";
+
+function throw_dice(){
+  var random_dice=Math.round(Math.random()*5); // 0..5
+  document.images["mydice"].src = eval("face"+random_dice+".src")
+}
+
+$( function() { $(".draggable").draggable(); } );
+$( function() { $( ".resizable" ).resizable(); } ); /* TODO */
+
+</script> 
+
+<style>
+.kandi {
+  width:  45px;
+  height: 45px;
+}
+.kandi:hover {
+  transform: scale(1.2);
+}
+
+.dice {
+  width:  80px;
+  height: 80px;
+}
+
+.dice:hover{
+width:  85px;
+  height: 85px;
+opacity: 0.9;
+}
+
+div{
+float: left;
+}
+
+#movePieces{
+margin: 10px;
+}
+
+#dicePlace{
+margin: 1px, auto;
+}
+
+</style>
+
+<img src="snakes-ladder-board.jpg" height="450" width="450" name="board">
+<br>
+
+<div id="pieces">
+<form>
+<div id="dicePlace">
+<img src="d1.png" name="mydice" class="dice ui-widget-content draggable" onClick="throw_dice()">
+</div>
+<div id="movePieces">
+<img src="blue.png"   name="blue"     class="kandi ui-widget-content draggable">
+<img src="green.png"  name="green"    class="kandi ui-widget-content draggable">
+<img src="red.png"    name="red"      class="kandi ui-widget-content draggable">
+<img src="yellow.png" name="yellow"   class="kandi ui-widget-content draggable">
+<div>
+</form>
+</div>
